@@ -23,10 +23,10 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-
+Load balancers protect from DDoS attack. Jumpbox is a network system that gives user access and manage devices from single node.
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- _TODO: What does Filebeat watch for?_ Filebeat monitors the changes of the information in the file and when it has been effected.
+- _TODO: What does Metricbeat record?_ Metricbeat collects metrics and statistics from the servers and send them to the respective output
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -34,9 +34,9 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| TODO     | Server   |            | Linux            |
+| TODO     | Server   |            | Linux            |
+| TODO     | Server   |            | Linux            |
 
 ### Access Policies
 
