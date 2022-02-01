@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+  - : Enter the playbook file._ /etc/ansible/my-elkservers.yml
 
 This document contains the following details:
 - Description of the Topologu
@@ -21,10 +21,10 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
+-  What aspect of security do load balancers protect? What is the advantage of a jump box?_
 Load balancers protect from DDoS attack. Jumpbox is a network system that gives user access and manage devices from single node.
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _log files___ and system __resources___.
 - _TODO: What does Filebeat watch for?_ Filebeat monitors the changes of the information in the file and when it has been effected.
 - _TODO: What does Metricbeat record?_ Metricbeat collects metrics and statistics from the servers and send them to the respective output
 
@@ -42,10 +42,10 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the _Jumpbox____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
  Add whitelisted IP addresses_Home public IP addresses
 
-Machines within the network can only be accessed by _____.
+Machines within the network can only be accessed by _Jumpbox____.
 -Which machine did you allow to access your ELK VM? What was its IP address?_ Jump box server and it has an IP address of 10.0.0.5
 
 A summary of the access policies in place can be found in the table below.
@@ -91,8 +91,8 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the __elk_install.yml___ file to __/etc/ansible/roles/elk_install.yml___.
+- Update the __hosts___ file to include Ips destination and elk.
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
