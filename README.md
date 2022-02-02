@@ -22,14 +22,12 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
--  What aspect of security do load balancers protect? What is the advantage of a jump box?_
 Load balancers protect from DDoS attack. Jumpbox is a network system that gives user access and manage devices from single node.
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _log files___ and system __resources___.
-- _TODO: What does Filebeat watch for?_ Filebeat monitors the changes of the information in the file and when it has been effected.
-- _TODO: What does Metricbeat record?_ Metricbeat collects metrics and statistics from the servers and send them to the respective output
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system resources.
+- Filebeat monitors the changes of the information in the file and when it has been effected.
+-  Metricbeat collects metrics and statistics from the servers and send them to the respective output
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
@@ -42,10 +40,10 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _Jumpbox____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
  Add whitelisted IP addresses_Home public IP addresses
 
-Machines within the network can only be accessed by _Jumpbox____.
+Machines within the network can only be accessed by Jumpbox.
 -Which machine did you allow to access your ELK VM? What was its IP address?_ Jump box server and it has an IP address of 10.0.0.5
 
 A summary of the access policies in place can be found in the table below.
@@ -70,10 +68,6 @@ The playbook implements the following tasks:
 - Command: sysctl -w vm.max_map_count=262144
 - Launch docker container: elk
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
-
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - : List the IP addresses of the machines you are monitoring_
@@ -91,13 +85,11 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the __elk_install.yml___ file to __/etc/ansible/roles/elk_install.yml___.
-- Update the __hosts___ file to include Ips destination and elk.
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the elk_install.yml file to /etc/ansible/roles/elk_install.yml
+- Update the hosts file to include Ips destination and elk.
+- Run the playbook, and navigate  to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_ /etc/ansible/file/filebeat-configuration.yml
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ edit the /etc/ansible/host file to add webserver/elkserver ip addresses
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- The playbook is /filebeat-configuration.yml and  copies to /etc/ansible/
+- Edit the /etc/ansible/host file to add webserver/elkserver ip addresses
+- Naviagte through http://elkserver-ip:5601/app/kibana to check the installation of elk server
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
